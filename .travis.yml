@@ -11,6 +11,7 @@ script:
 after_success:
   - docker build -t javicast/multi-client ./client
   - docker build -t javicast/multi-nginx ./nginx
+  - docker build -t javicast/multi-server ./server
   - docker build -t javicast/multi-worker ./worker
   #Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
